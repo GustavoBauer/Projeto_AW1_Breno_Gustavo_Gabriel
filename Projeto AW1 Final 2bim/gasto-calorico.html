@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <title> Mais Saude </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial scale=1">
+    <meta name="author" content="Gustavo Bauer, Gabriel Alzani e Breno Nogueira">
+    <link rel="stylesheet" href="css/estilo-gasto-calorico.css">
+</head>
+
+<body>
+    <article class="gasto-calorico">
+        <h1>Gasto Calórico</h1>
+        <p>
+            O gasto calórico basal é a quantidade de energia que o organismo gasta mesmo estando descansando ou
+            dormindo. Aqui você fica sabendo a quantidade mínima de calorias que deve ingerir por dia para satisfazer as
+            necessidades do corpo.
+        </p>
+        <form name="teste">
+            <p>
+                    Sexo: <br>
+                    <label><input type="radio" name="sexo" value="m"> Masculino </label>
+                    <label><input type="radio" name="sexo" value="f"> Feminino </label>
+            </p>
+            <p>
+                <label>
+
+                    Peso (kg): <br>
+                    <input type="text" name="peso" placeholder="80.1">
+
+                </label>
+            </p>
+            <p>
+                <label>
+
+                    Altura (m): <br>
+                    <input type="text" name="altura" placeholder="1.80">
+
+                </label>
+            </p>
+
+            <p>
+                <label> Idade (anos): <br>
+                    <input type="text" name="idade" placeholder="35">
+                </label>
+            </p>
+
+            <input type="button" value="Calcular!" onclick="calcular()">
+        </form>
+        <script>
+            function calcular() {
+                var peso = parseFloat(document.teste.peso.value);
+                var altura = parseFloat(document.teste.altura.value);
+                var idade = parseFloat(document.teste.idade.value);
+                if (document.teste.sexo.value == "m") {
+                    resultado = 655 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade);
+                } else if (document.teste.sexo.value == "f") {
+                    resultado = 66 + (13.7 * peso) + (5 * altura) - (6.5 * idade)
+                }
+                alert("Gasto calórico: " + resultado + " calorias!");
+            }
+        </script>
+    </article>
+</body>
+
+</html>
